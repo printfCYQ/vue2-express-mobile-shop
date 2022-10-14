@@ -1,14 +1,14 @@
 <template>
-  <div class="home">
+  <div class="cart">
+    <h1>cart</h1>
     <Tabbar></Tabbar>
   </div>
 </template>
-
 <script>
 import Tabbar from '../components/common/Tabbar.vue'
-
 export default {
-  name: "Home", components: {
+  name: "Cart",
+  components: {
     Tabbar
   }
 };
