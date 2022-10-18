@@ -8,6 +8,7 @@ specifiers:
   '@vue/cli-service': ~4.5.15
   '@vue/eslint-config-prettier': ^6.0.0
   babel-eslint: ^10.1.0
+  babel-plugin-import: ^1.13.5
   core-js: ^3.6.5
   eslint: ^6.7.2
   eslint-plugin-prettier: ^3.3.1
@@ -15,6 +16,7 @@ specifiers:
   prettier: ^2.2.1
   sass: ^1.55.0
   sass-loader: '10'
+  vant: ^2.12.51
   vue: ^2.6.11
   vue-router: ^3.2.0
   vue-template-compiler: ^2.6.11
@@ -24,6 +26,7 @@ dependencies:
   core-js: 3.25.5
   sass: 1.55.0
   sass-loader: 10.3.1_sass@1.55.0
+  vant: 2.12.51_vue@2.7.13
   vue: 2.7.13
   vue-router: 3.6.5
   vuex: 3.6.2_vue@2.7.13
@@ -36,6 +39,7 @@ devDependencies:
   '@vue/cli-service': 4.5.19_099d99e757c6086a8c013ffe7f008b06
   '@vue/eslint-config-prettier': 6.0.0_d7db5d54a0ffb7fa3bb52bc7d98c8d11
   babel-eslint: 10.1.0_eslint@6.8.0
+  babel-plugin-import: 1.13.5
   eslint: 6.8.0
   eslint-plugin-prettier: 3.4.1_eslint@6.8.0+prettier@2.7.1
   eslint-plugin-vue: 6.2.2_eslint@6.8.0
@@ -1213,7 +1217,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.10
-    dev: true
 
   /@babel/template/7.18.10:
     resolution: {integrity: sha512-TI+rCtooWHr3QJ27kJxfjutghu44DLnasDMwpDqCXVTal9RLp3RSYNh4NdBrRP2cQAoG9A8juOQl6P6oZG4JxA==}
@@ -1506,9 +1509,16 @@ packages:
       source-map: 0.6.1
     dev: true
 
+  /@vant/icons/1.8.0:
+    resolution: {integrity: sha512-sKfEUo2/CkQFuERxvkuF6mGQZDKu3IQdj5rV9Fm0weJXtchDSSQ+zt8qPCNUEhh9Y8shy5PzxbvAfOOkCwlCXg==}
+    dev: false
+
+  /@vant/popperjs/1.3.0:
+    resolution: {integrity: sha512-hB+czUG+aHtjhaEmCJDuXOep0YTZjdlRR+4MSmIFnkCQIxJaXLQdSsR90XWvAI2yvKUI7TCGqR8pQg2RtvkMHw==}
+    dev: false
+
   /@vue/babel-helper-vue-jsx-merge-props/1.4.0:
     resolution: {integrity: sha512-JkqXfCkUDp4PIlFdDQ0TdXoIejMtTHP67/pvxlgeY+u5k3LEdKuWZ3LK6xkxo52uDoABIVyRwqVkfLQJhk7VBA==}
-    dev: true
 
   /@vue/babel-helper-vue-transform-on/1.0.2:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==}
@@ -2329,6 +2339,12 @@ packages:
     resolution: {integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==}
     dependencies:
       object.assign: 4.1.4
+    dev: true
+
+  /babel-plugin-import/1.13.5:
+    resolution: {integrity: sha512-IkqnoV+ov1hdJVofly9pXRJmeDm9EtROfrc5i6eII0Hix2xMs5FEm8FG3ExMvazbnZBbgHIt6qdO8And6lCloQ==}
+    dependencies:
+      '@babel/helper-module-imports': 7.18.6
     dev: true
 
   /babel-plugin-polyfill-corejs2/0.3.3_@babel+core@7.19.3:
@@ -7149,7 +7165,6 @@ packages:
 
   /regenerator-runtime/0.13.10:
     resolution: {integrity: sha512-KepLsg4dU12hryUO7bp/axHAKvwGOCV0sGloQtpagJ12ai+ojVDqkeGSiRX1zlq+kjIMZ1t7gpze+26QqtdGqw==}
-    dev: true
 
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
@@ -8488,6 +8503,19 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
+  /vant/2.12.51_vue@2.7.13:
+    resolution: {integrity: sha512-0dZHcBWwKdQvgvAMr5hqObuwkHRn51c7ReLVDV/Ijp1twZ/9/JGMPKVCp1ebpzFAONudyDvu42adrkFUhheaUA==}
+    peerDependencies:
+      vue: '>= 2.6.0'
+    dependencies:
+      '@babel/runtime': 7.19.4
+      '@vant/icons': 1.8.0
+      '@vant/popperjs': 1.3.0
+      '@vue/babel-helper-vue-jsx-merge-props': 1.4.0
+      vue: 2.7.13
+      vue-lazyload: 1.2.3
+    dev: false
+
   /vary/1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
@@ -8531,6 +8559,10 @@ packages:
   /vue-hot-reload-api/2.3.4:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
+
+  /vue-lazyload/1.2.3:
+    resolution: {integrity: sha512-DC0ZwxanbRhx79tlA3zY5OYJkH8FYp3WBAnAJbrcuoS8eye1P73rcgAZhyxFSPUluJUTelMB+i/+VkNU/qVm7g==}
+    dev: false
 
   /vue-loader/15.10.0_f55448468916c878cfb86c3766010c17:
     resolution: {integrity: sha512-VU6tuO8eKajrFeBzMssFUP9SvakEeeSi1BxdTH5o3+1yUyrldp8IERkSdXlMI2t4kxF2sqYUDsQY+WJBxzBmZg==}

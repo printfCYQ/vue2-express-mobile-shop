@@ -1,89 +1,37 @@
 <template>
     <div class="tabbar">
-        <ul>
-            <li v-for="item in routerList" :key="item.path" @click="switchTab(item.path)">
-                <i class="iconfont img" :class="[item.icon, $route.path.includes(item.path) ? 'select':'']"></i>
-                <span :class="$route.path.includes(item.path) ? 'select':''">{{item.title}}</span>
-            </li>
-
-        </ul>
+        <van-tabbar v-model="active" :route="true">
+            <van-tabbar-item v-for="item in routerList" :key="item.path" :icon="item.icon" :to="item.path">
+                {{item.name}}
+            </van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 
 <script>
+import { Notify } from 'vant';
 export default {
     name: 'Tabbar',
     data() {
         return {
+            active: 0,
             routerList: [
                 {
-                    title: '首页', path: '/home', icon: 'icon-home',
+                    name: '首页', path: '/home', icon: 'home-o',
                 },
                 {
-                    title: '分类', path: '/list', icon: 'icon-voiceshopping',
+                    name: '分类', path: '/list', icon: 'apps-o',
                 },
                 {
-                    title: '购物车', path: '/cart', icon: 'icon-cart',
+                    name: '购物车', path: '/cart', icon: 'shopping-cart-o',
                 },
                 {
-                    title: '我的', path: '/my', icon: 'icon-nickname',
+                    name: '我的', path: '/my', icon: 'user-o',
                 },
             ]
         }
     },
     methods: {
-        switchTab(path) {
-            this.$router.push(path)
-        }
     }
 }
 </script>
-
-<style lang="scss" scoped>
-.tabbar {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 999;
-    width: 100%;
-    height: 1.111111rem;
-    background-color: #fff;
-
-    ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-
-        li {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .img {
-                font-size: 0.516666rem;
-
-                &.select {
-                    font-size: 0.516666rem;
-                    color: #f30320;
-
-                }
-            }
-
-
-
-            span {
-                font-size: 0.266666rem;
-
-                &.select {
-                    color: #f30320;
-
-                }
-            }
-        }
-    }
-}
-</style>

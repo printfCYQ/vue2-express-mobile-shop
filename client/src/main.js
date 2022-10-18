@@ -3,7 +3,10 @@ import App from "@/App.vue";
 import router from "@/router";
 import store from "@/store";
 
-import '@/assets/js/flexible'
+import "@/assets/js/flexible";
+
+import "@/plugins/vant";
+
 Vue.config.productionTip = false;
 
 new Vue({
