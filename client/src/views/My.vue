@@ -5,10 +5,11 @@
   </div>
 </template>
 <script>
-import Tabbar from '@/components/common/Tabbar.vue'
+import Tabbar from "@/components/common/Tabbar.vue";
 export default {
-  name: "My", components: {
-    Tabbar
-  }
+  name: "My",
+  components: {
+    Tabbar,
+  },
 };
 </script>

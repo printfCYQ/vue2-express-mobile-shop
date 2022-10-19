@@ -4,6 +4,6 @@
   </div>
 </template>
 <style lang="scss">
-@import './assets/style/common.scss';
-@import './assets/icon/iconfont.css';
+@import "./assets/style/common.scss";
+@import "./assets/icon/iconfont.css";
 </style>

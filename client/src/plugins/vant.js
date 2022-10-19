@@ -14,9 +14,12 @@ import {
   GridItem,
   Card,
   Tag,
+  Skeleton,
+  Dialog,
 } from "vant";
 
 Vue.use(Lazyload);
+Vue.use(Dialog);
 
 Vue.use(Button);
 Vue.use(Tabbar);
@@ -31,3 +34,4 @@ Vue.use(Grid);
 Vue.use(GridItem);
 Vue.use(Card);
 Vue.use(Tag);
+Vue.use(Skeleton);
