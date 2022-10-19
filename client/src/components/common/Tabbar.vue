@@ -1,6 +1,6 @@
 <template>
     <div class="tabbar">
-        <van-tabbar v-model="active" :route="true">
+        <van-tabbar v-model="active" :route="true" active-color="#ee2923">
             <van-tabbar-item v-for="item in routerList" :key="item.path" :icon="item.icon" :to="item.path">
                 {{item.name}}
             </van-tabbar-item>
