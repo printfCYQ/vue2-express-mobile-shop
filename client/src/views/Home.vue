@@ -21,6 +21,7 @@
               <img class="swipe-img" v-lazy="image" />
             </van-swipe-item>
           </van-swipe>
+
           <van-grid
             v-if="[0].includes(currentTab)"
             class="grid-warp"
@@ -34,27 +35,14 @@
               :text="item.title"
             />
           </van-grid>
+
           <div class="recommend-warp" v-if="[0].includes(currentTab)">
             <h2 class="recommend-title">
               <van-icon name="hot-o" size=".35rem" color="#ee2923" />
               爆款推荐
               <van-icon name="hot-o" size=".35rem" color="#ee2923" />
             </h2>
-            <van-card
-              v-for="item in 5"
-              :key="item"
-              tag="标签"
-              price="2.00"
-              desc="描述信息"
-              title="商品标题"
-              thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
-              origin-price="10.00"
-            >
-              <template #tags>
-                <van-tag plain type="danger">标签</van-tag>
-                <van-tag plain type="danger">标签</van-tag>
-              </template>
-            </van-card>
+            <ShopListRow></ShopListRow>
           </div>
 
           <div class="ad-warp" v-if="[1, 2, 3, 4, 5].includes(currentTab)">
@@ -71,18 +59,7 @@
               猜你喜欢
               <van-icon name="flower-o" size=".35rem" color="#ee2923" />
             </h2>
-            <van-grid :column-num="2">
-              <van-grid-item v-for="item in 5" :key="item">
-                <img
-                  class="like-shop-img"
-                  src="https://img01.yzcdn.cn/vant/ipad.jpeg"
-                  alt=""
-                />
-                <div class="like-shop-title">商品标题商品标题商品标题</div>
-                <div class="like-shop-desc">描述信息</div>
-                <div class="like-shop-price">¥3.00</div>
-              </van-grid-item>
-            </van-grid>
+            <ShopListCol></ShopListCol>
           </div>
         </van-tab>
       </van-tabs>
@@ -94,12 +71,16 @@
 <script>
 import Tabbar from "@/components/common/Tabbar.vue";
 import Header from "@/components/common/Header.vue";
+import ShopListCol from "@/components/common/ShopListCol.vue";
+import ShopListRow from "@/components/common/ShopListRow.vue";
 
 export default {
   name: "Home",
   components: {
     Tabbar,
     Header,
+    ShopListCol,
+    ShopListRow,
   },
   data() {
     return {
@@ -197,32 +178,6 @@ export default {
       .like-warp {
         .like-title {
           text-align: center;
-        }
-
-        .like-shop-img {
-          width: 100%;
-        }
-
-        .like-shop-title {
-          width: 100%;
-          font-size: 0.3rem;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
-          overflow: hidden;
-        }
-
-        .like-shop-desc {
-          width: 100%;
-          font-size: 0.2rem;
-          max-height: 20px;
-        }
-
-        .like-shop-price {
-          width: 100%;
-          color: #ee2923;
-          text-align: right;
-          font-size: 0.3rem;
         }
       }
     }

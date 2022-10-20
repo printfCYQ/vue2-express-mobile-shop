@@ -16,10 +16,12 @@ import {
   Tag,
   Skeleton,
   Dialog,
+  Notify,
 } from "vant";
 
 Vue.use(Lazyload);
 Vue.use(Dialog);
+Vue.use(Notify);
 
 Vue.use(Button);
 Vue.use(Tabbar);
