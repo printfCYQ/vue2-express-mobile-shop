@@ -17,6 +17,12 @@ import {
   Skeleton,
   Dialog,
   Notify,
+  Loading,
+  Sidebar,
+  SidebarItem,
+  GoodsAction,
+  GoodsActionIcon,
+  GoodsActionButton,
 } from "vant";
 
 Vue.use(Lazyload);
@@ -37,3 +43,9 @@ Vue.use(GridItem);
 Vue.use(Card);
 Vue.use(Tag);
 Vue.use(Skeleton);
+Vue.use(Loading);
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionButton);
+Vue.use(GoodsActionIcon);

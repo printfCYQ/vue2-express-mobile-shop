@@ -74,6 +74,8 @@ import Header from "@/components/common/Header.vue";
 import ShopListCol from "@/components/common/ShopListCol.vue";
 import ShopListRow from "@/components/common/ShopListRow.vue";
 
+import { test } from "@/common/api/api";
+
 export default {
   name: "Home",
   components: {
@@ -107,10 +109,22 @@ export default {
       ],
     };
   },
-  created() {
+  async created() {
     setTimeout(() => {
       this.skeletonLoading = false;
     }, 500);
+    // test().then(res => {
+    //   console.log(res);
+    // }).catch(e => {
+    //   console.error(e);
+    // })
+    // try {
+    //   const res = await test()
+    //   console.log(res);
+
+    // } catch (error) {
+    //   console.error(error);
+    // }
   },
   methods: {
     tabsChange(e) {

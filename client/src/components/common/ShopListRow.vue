@@ -9,6 +9,7 @@
       title="商品标题"
       thumb="https://img01.yzcdn.cn/vant/ipad.jpeg"
       origin-price="10.00"
+      @click="onDetial"
     >
       <template #tags>
         <van-tag plain type="danger">标签</van-tag>
@@ -21,5 +22,10 @@
 <script>
 export default {
   name: "ShopListRow",
+  methods: {
+    onDetial() {
+      this.$router.push("/detail");
+    },
+  },
 };
 </script>

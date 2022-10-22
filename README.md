@@ -1,14 +1,15 @@
 # vue2-express-mobile-shop
 
-## create
 ```
-vue create client
-```
-
-```
-pnpm install express-generator -g
+pnpm i
 ```
 
 ```
-express --view=ejs server
+npm run sereve
 ```
+
+```
+npm run dev
+```
+
+- Abandon the task

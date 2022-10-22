@@ -44,6 +44,7 @@
       </template>
     </van-search>
     <div v-if="hasSearch" class="shop-list">
+      <FilterShop></FilterShop>
       <ShopListRow v-if="shopListType === 0"></ShopListRow>
       <ShopListCol v-else></ShopListCol>
     </div>
@@ -101,11 +102,13 @@
 <script>
 import ShopListCol from "@/components/common/ShopListCol.vue";
 import ShopListRow from "@/components/common/ShopListRow.vue";
+import FilterShop from "@/components/common/FilterShop.vue";
 export default {
   name: "Search",
   components: {
     ShopListCol,
     ShopListRow,
+    FilterShop,
   },
   data() {
     return {
