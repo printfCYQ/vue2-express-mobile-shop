@@ -18,5 +18,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3010, () => {
-  console.log("服务器启动1:http://localhost:3300");
+  console.log("服务器启动1:http://localhost:3010");
 });

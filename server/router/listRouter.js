@@ -26,4 +26,9 @@ router.get("/", function (req, res) {
 router.get("/:id", function (req, res) {
   res.send(`订单详情`);
 });
+
+router.post("/", function (req, res) {
+  console.log(req.body);
+  res.send(req.body);
+});
 module.exports = router;
